@@ -17,3 +17,13 @@ https://openweathermap.org/weather-conditions
 
 API key
 1be18276dbf6dd7f92eb0d144ef88985 
+
+Atlanta ID:
+{
+    "id": 4671576,
+    "name": "Atlanta",
+    "country": "US",
+    "coord": {
+      "lon": -94.164352,
+      "lat": 33.113739
+    }
