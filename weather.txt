@@ -1,12 +1,19 @@
-Sunny, maybe
-Cloudy,
-Mist/Fog
-Haze/Smoke 
-Light rain, sound
+Name, red, green, blue
+Sunny, 255, 255, 0
+Cloudy, 130, 132, 139
+Mist/Fog, 255, 255, 255
+Haze/Smoke, 201, 255, 71 
+Light rain, 134, 196, 223 sound
 Heavy rain, sound
-Thunderstorm, sound
-Snow, Christmas music
-Sunrise
-Sunset
-Night
-Volcanic Ash
+Thunderstorm, 58, 58, 58 sound
+Snow, 203, 203, 203Christmas music
+Sunrise, 
+Sunset, 255, 128, 0
+Night, 44, 47, 154
+Volcanic Ash, 84, 41, 41
+
+
+pi connects to weather API, interprets weather, sends char to mbed
+mbed receives the char and outputs desired animation through PWM, using power MOSFETs to boost to 12V
+node.js web page used to configure settings
+get rasbperry pi MAC address to connect to GTOther, or use hotspot
