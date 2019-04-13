@@ -1,0 +1,12 @@
+Sunny, maybe
+Cloudy,
+Mist/Fog
+Haze/Smoke 
+Light rain, sound
+Heavy rain, sound
+Thunderstorm, sound
+Snow, Christmas music
+Sunrise
+Sunset
+Night
+Volcanic Ash
