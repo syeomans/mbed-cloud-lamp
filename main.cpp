@@ -3,8 +3,8 @@
 //{"coord":{"lon":-0.13,"lat":51.51},"weather":[{"id":300,"main":"Drizzle","description":"light intensity drizzle","icon":"09d"}],"base":"stations","main":{"temp":280.32,"pressure":1012,"humidity":81,"temp_min":279.15,"temp_max":281.15},"visibility":10000,"wind":{"speed":4.1,"deg":80},"clouds":{"all":90},"dt":1485789600,"sys":{"type":1,"id":5091,"message":0.0103,"country":"GB","sunrise":1485762037,"sunset":1485794875},"id":2643743,"name":"London","cod":200}
 
 PwmOut red(p23);
-PwmOut green(p22);
-PwmOut blue(p21);
+PwmOut green(p21);
+PwmOut blue(p22);
 
 
 void fade(float r, float g, float b, float stepSize, float delay){
@@ -46,16 +46,65 @@ void fade(float r, float g, float b, float stepSize, float delay){
     }
 }   
 
+void rain(float r, float g, float b, float stepSize, float duration) {
+    float step = 0.0;
+    while (step < duration) {
+        if (red == r && green == g && blue == b) {
+            red = 0.0;
+            green = 0.0;
+            blue = 0.0;
+            wait(0.25);
+        } else {
+            red = r;
+            green = g;
+            blue = b;
+            wait(0.25);
+        }
+        step += stepSize;
+    } 
+} 
 
+void thunderstorm(float r, float g, float b, float stepSize, float duration) {
+    float step = 0.0;
+    int lightning = 0;
+    while (step < duration) {
+        if (red == r && green == g && blue == b) {
+            red = 0.0;
+            green = 0.0;
+            blue = 0.0;
+            wait(0.25);
+        } else {
+            red = r;
+            green = g;
+            blue = b;
+            wait(0.25);
+        }
+        lightning = rand()%6 + 1;
+        if (lightning == 1) {
+            red = 1.0;
+            green = 1.0;
+            blue = 0.3;
+            wait(0.2);
+        }  
+        step += stepSize;
+    } 
+} 
 int main() {
     red.period(0.01f);//setting the period of one PWMOut sets all of them
 
     red = 1.0;
     green = 1.0;
     blue = 1.0;
-    
-    fade(1.0, 0.1, 0.0, 0.001, 0.01); //fade to red
-    fade(0.8, 0.3, 0.0, 0.001, 0.03); //fade to orange
-    fade(1.0, 0.4, 0.0, 0.001, 0.03); //fade to yellow
-    fade(0.1, 0.2, 0.3, 0.001, 0.03); //fade to indigo
+    while(1) {
+        fade(1.0, 0.2, 0.0, 0.001, 0.00); //fade to sunset
+        wait(10.0);
+        fade(0.1, 0.0, 0.25, 0.001, 0.00); //fade to night
+        wait(10.0);
+        fade(1.0, 0.3, 0.0, 0.001, 0.00); //fade to sunny
+        wait(10.0);
+        fade(1.0, 1.0, 0.3, 0.001, 0.00); //fade to winter
+        wait(10.0);
+        rain(0.1, 0.0, 0.25, 0.1, 4.0); //blink blue for rain
+        thunderstorm(0.1, 0.0, 0.25, 0.1, 8.0); //blink blue and flash white for thunder
+    }
 }
