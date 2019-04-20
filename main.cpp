@@ -54,8 +54,8 @@ int main() {
     green = 1.0;
     blue = 1.0;
     
-    fade(1.0, 0.1, 0.0, 0.01, 0.03); // fade to red
-    fade(0.8, 0.3, 0.0, 0.001, 0.03); // fade to orange
-    fade(0.4, 0.2, 0.1, 0.001, 0.03); //fade to yellow
-    fade(0.1, 0.1, 0.3, 0.01, 0.03); //fade to indigo
+    fade(1.0, 0.1, 0.0, 0.001, 0.01); //fade to red
+    fade(0.8, 0.3, 0.0, 0.001, 0.03); //fade to orange
+    fade(1.0, 0.4, 0.0, 0.001, 0.03); //fade to yellow
+    fade(0.1, 0.2, 0.3, 0.001, 0.03); //fade to indigo
 }
