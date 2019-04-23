@@ -4,6 +4,7 @@
 import urllib2
 import json
 import serial
+import sys
 
 def getWeather():
 	"""
