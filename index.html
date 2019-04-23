@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+	<style>
+	h1 {text-align:center;}
+	p {text-align:center;}
+	</style>
+	</head>
+	<body>
+	<form action="/mode" method = "post">
+    	<h1>Welcome to cloudLamp!<br></h1>
+    	<p><select name="choose">
+        	<optgroup label="Choose your mode">
+					<option value= "">Select your mode</option>
+            		<option value="f">Off</option>
+            		<option value="w">Live Weather</option>
+            		<option value="d">Weather Demo </option>
+            		<option value="u">Custom Color</option>
+        	</optgroup>
+        </select></p>
+        <br><p>Choose your custom color combination<br>
+        <select name="red">
+        	<optgroup label="Red value">
+					<option value= "">Red intensity</option>
+            		<option value="0">0</option>
+            		<option value="1">1</option>
+            		<option value="2">2</option>
+            		<option value="3">3</option>
+            		<option value="4">4</option>
+            		<option value="5">5</option>
+            		<option value="6">6</option>
+            		<option value="7">7</option>
+            		<option value="8">8</option>
+            		<option value="9">9</option>
+            		<option value="m">10</option>
+        	</optgroup>
+        </select>
+        <select name="green">
+        	<optgroup label="Green value">
+					<option value= "">Green intensity</option>
+            		<option value="0">0</option>
+            		<option value="1">1</option>
+            		<option value="2">2</option>
+            		<option value="3">3</option>
+            		<option value="4">4</option>
+            		<option value="5">5</option>
+            		<option value="6">6</option>
+            		<option value="7">7</option>
+            		<option value="8">8</option>
+            		<option value="9">9</option>
+            		<option value="m">10</option>
+        	</optgroup>
+        </select>
+        <select name="blue">
+        	<optgroup label="Blue value">
+					<option value= "">Blue intensity</option>
+            		<option value="0">0</option>
+            		<option value="1">1</option>
+            		<option value="2">2</option>
+            		<option value="3">3</option>
+            		<option value="4">4</option>
+            		<option value="5">5</option>
+            		<option value="6">6</option>
+            		<option value="7">7</option>
+            		<option value="8">8</option>
+            		<option value="9">9</option>
+            		<option value="m">10</option>
+        	</optgroup>
+        </select>
+        <br>For demo mode, choose your weather state<br>
+        <select name = "weather">
+			<optgroup label ="Weather states">
+				<option value = "">Select weather state</option>
+				<option value="L">Clear</option>
+				<option value="c">Cloudy</option>
+				<option value="r">Rain</option>
+				<option value="t">Thunderstorm</option>
+				<option value="s">Snow</option>
+				<option value="o">Fog/Mist</option>
+				<option value="h">Smoke/Haze</option>
+			</optgroup>
+        </select>
+        <input type="submit" />
+        </p>
+    	
+	</form>
+	</body>
+</html>
