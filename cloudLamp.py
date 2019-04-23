@@ -6,12 +6,15 @@ import json
 import serial
 import sys
 
+jsCondition = str(sys.argv[1])
+print(jsCondition)
+
 def getWeather():
 	"""
 	Make an api call to openweathermap.org
 
 	Returns one of:
-	['Clear', 'Drizzle', 'Clouds', 'Thunderstorm', 'Rain', 'Snow', 'Fog', 'Mist', 'Smoke', 'Haze', 'Ash']
+	['Clear', 'Drizzle', 'Clouds', 'Thunderstorm', 'Rain', 'Snow', 'Fog', 'Mist', 'Smoke', 'Haze']
 		(Technically it can return more, but these are the only ones we care about. 
 		Link to see the rest: https://openweathermap.org/weather-conditions )
 	"""
