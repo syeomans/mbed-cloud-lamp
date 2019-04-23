@@ -3,6 +3,7 @@
 # import RPi.GPIO as GPIO
 import urllib2
 import json
+import serial
 
 def getWeather():
 	"""
@@ -20,7 +21,12 @@ def getWeather():
 	contents = json.load(urllib2.urlopen(request))
 	return(contents['weather'][0]['main'])
 
-# Main loop
-currentWeather = getWeather()
-print(currentWeather)
+# # Main loop
+# currentWeather = getWeather()
+# print(currentWeather)
+
+ser = serial.Serial('/dev/ttyACM0')  # open serial port
+print(ser.name)         # check which port was really used
+ser.write(b'hello')     # write a string
+ser.close()             # close port
 
