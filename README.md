@@ -7,10 +7,10 @@ Members: Collin Moore, Samuel Yeomans, Sidharth Eleswarapu, Koh Hui Fang
 Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display an animation corresponding to the current weather on an LED strip.
 
 ### Parts list: 
-- [Raspberry Pi 3 Model B] (https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-- [MBED LPC 1768] (https://os.mbed.com/platforms/mbed-LPC1768/)
-- [Analog LED strip] (https://www.adafruit.com/product/285?length=1)
-- [12 Volt Power Supply] (https://www.adafruit.com/product/798)
+- [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- [MBED LPC 1768](https://os.mbed.com/platforms/mbed-LPC1768/)
+- [Analog LED strip](https://www.adafruit.com/product/285?length=1)
+- [12 Volt Power Supply](https://www.adafruit.com/product/798)
 - Gallon water jug
 - Bag of craft stuffing
 
