@@ -25,5 +25,6 @@ The Python script runs inside of a Node.js Express script which pushes a HTML pa
 # Displaying the animations via the MBED
 To display the animations, we use a analog LED strip connected to a 12V power adapter. The circuit below uses MOSFETS to control the red, green, and blue signals using PWM. For more information about using this LED strip, go here: https://learn.adafruit.com/rgb-led-strips/overview
 
+![Wiring diagram for the analog LED strip](https://cdn-learn.adafruit.com/assets/assets/000/002/692/original/led_strips_ledstripfet.gif?1448059609)
 
 This LED strip, along with the Pi and the MBED, are placed inside the water jug. We cut a door in the bottom of the jug to more easily access the innards. After the completion of the technical side of the project, we glued clumps of cotton all over it so that the jug resembled a cloud. More information about the “arts and crafts” aspect of this project can be found in this video _.
