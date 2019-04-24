@@ -36,7 +36,7 @@ The team built the cloud-shaped casing by following Household Hacker's [How To M
 
 ### Build steps
 1. Cut out a large rectangle from the base of the jug
-2. Attach hinge and latch
+2. Attach hinges and latch
 3. Hot glue stuffing to the outside of the bottle
 
 # The Build
