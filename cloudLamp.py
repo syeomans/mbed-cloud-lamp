@@ -1,7 +1,7 @@
 # Import modules
 import time
 import urllib3
-import certifi
+# import certifi
 import json
 import serial
 import sys
@@ -19,7 +19,8 @@ def getWeather():
 	Make an api call to openweathermap.org
 	"""
 	# Set up a pool manager for urllib3 with certificates
-	http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',ca_certs=certifi.where())
+	# http = urllib3.PoolManager(cert_reqs='CERT_REQUIRED',ca_certs=certifi.where())
+	http = urllib3.PoolManager() # Update: Do this without certificates
 
 	# Generate API request
 	apiKey = "1be18276dbf6dd7f92eb0d144ef88985"
