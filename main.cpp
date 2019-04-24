@@ -6,7 +6,8 @@ PwmOut red(p23);
 PwmOut green(p21);
 PwmOut blue(p22);
 RawSerial  pi(USBTX, USBRX);
-char temp;
+char temp = 'f';
+bool flag;
 
 void fade(float r, float g, float b, float stepSize, float delay){
     int rDir;
@@ -93,42 +94,42 @@ void thunderstorm(float r, float g, float b, float stepSize, float duration) {
 
 void sunset(){
     fade(1.0, 0.2, 0.0, 0.001, 0.00); //fade to sunset
-    while(1){
+    while(!pi.readable()){
     }
 }
 
 void night(){
     fade(0.1, 0.0, 0.25, 0.001, 0.00); //fade to night
-    while(1){
+    while(!pi.readable()){
     }
 }
 
 void sunny(){
     fade(1.0, 0.3, 0.0, 0.001, 0.00); //fade to sunny
-    while(1){
+    while(!pi.readable()){
     }
 }
 
 void winter(){
     fade(1.0, 1.0, 0.3, 0.001, 0.00); //fade to winter
-    while(1){
+    while(!pi.readable()){
     }
 }
 
 void rain() {
-    while(1) {
+    while(!pi.readable()) {
         rain(0.1, 0.0, 0.35, 0.1, 4.0); //blink blue for rain
     }
     
 }
 
 void thunderstorm() {
-    while(1) {
+    while(!pi.readable()) {
         thunderstorm(0.1, 0.0, 0.35, 0.1, 8.0); //blink blue and flash white for thunder
     }
 }
  void cloudy() {
-    while(1) {
+    while(!pi.readable()) {
         fade(0.5, 0.5, 0.15, 0.001, 0.01); //fade to cloudy (half values of winter)
         wait(2.5);
         fade(0.35, 0.35, 0.1, 0.001, 0.01); //fade to slightly cloudy
@@ -139,8 +140,6 @@ void thunderstorm() {
         wait(2.5);
         fade(0.01, 0.008, 0.001, 0.001, 0.01); //fade to nearly cloudless
         wait(2.5);
-        if (temp != 'c')
-            break; 
     }    
 }
 
@@ -148,15 +147,41 @@ void off() {
     red = 0.0;
     green = 0.0;
     blue = 0.0;
-    while(1) {
+    while(!pi.readable()) {
     }
 }
+
+float charConvert(char ch) {
+    if (ch == '0') return 0.0;
+    if (ch == '1') return 0.1;
+    if (ch == '2') return 0.2;
+    if (ch == '3') return 0.3;
+    if (ch == '4') return 0.4;
+    if (ch == '5') return 0.5;
+    if (ch == '6') return 0.6;
+    if (ch == '7') return 0.7;
+    if (ch == '8') return 0.8;
+    if (ch == '9') return 0.9;
+    if (ch == 'm') return 1.0;
+}
+
+void custom() {
+    char redChar = pi.getc();
+    char greenChar = pi.getc();
+    char blueChar = pi.getc();
+    red = charConvert(redChar);
+    blue = charConvert(blueChar);
+    green = charConvert(greenChar);
+    while(!pi.readable()) {
+    }
+}
+    
 
 void dev_recv()
 {
     while(pi.readable()) {
         temp = pi.getc();
-        if (temp=='l') sunny();
+        if (temp=='L') sunny();
         if (temp=='c') cloudy();
         if (temp=='r') rain();
         if (temp=='t') thunderstorm();
@@ -164,12 +189,14 @@ void dev_recv()
         if (temp=='n') night();
         if (temp=='b') sunset(); //sunrise
         if (temp=='e') sunset();
-        if (temp == 'f') off();
+        if (temp =='f') off();
+        if (temp == 'u') custom();
     }
 }
 
 int main() {
     red.period(0.01f);//setting the period of one PWMOut sets all of them
+    off();
     pi.baud(9600);
     pi.attach(&dev_recv, Serial::RxIrq);
     while(1) {
