@@ -1,9 +1,9 @@
 # The team: 
-##Team Cloud Lamp
+### Team Cloud Lamp
 Members: Collin Moore, Samuel Yeomans, Sidharth Eleswarapu, Koh Hui Fang
 
 # The project
-## Purpose 
+### Purpose 
 Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display the animation corresponding to the current weather on an LED strip
 
 ## Parts list: 
