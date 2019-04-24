@@ -9,14 +9,14 @@ Use a Raspberry Pi to periodically collect data from a free weather API online, 
 ### Getting Weather Data
 To collect the weather data, this Python script hits the free weather API _. This script condenses the more granular weather conditions into general archetypes and sends the corresponding character to the MBED through the virtual COM USB serial port. Currently, the script has Atlanta set as the location. More information regarding the weather API, including a list of conditions and locations, can be found here _.
 
-# Configuring settings via HTML
+### Configuring settings via HTML
 The Python script runs inside of a Node.js Express script which pushes a HTML page to port 8000. This page allows the user to change the mode of the Cloud Lamp. There are currently 4 modes:
 1. Off (all the lights are turned off)
 2. Demo (cycles thru the different animations)
 3. Live Weather (displays the animation associated with the current weather condition)
 4. Custom Color (displays the color specified by the values in the text boxes)
 
-# Displaying the animations via the MBED
+### Displaying the animations via the MBED
 To display the animations, we use a analog LED strip connected to a 12V power adapter. The circuit below uses MOSFETS to control the red, green, and blue signals using PWM. For more information about using this LED strip, go here: https://learn.adafruit.com/rgb-led-strips/overview
 
 ![Wiring diagram for the analog LED strip](https://cdn-learn.adafruit.com/assets/assets/000/002/692/original/led_strips_ledstripfet.gif?1448059609)
