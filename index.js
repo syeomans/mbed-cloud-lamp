@@ -18,12 +18,12 @@ app.post('/mode', function (req, res) {
     	var green = req.body.green;
     	var blue = req.body.blue;
     	var weather = req.body.weather
-	console.log(mode);
-	console.log(red);
-	console.log(green);
-	console.log(blue);
-	res.sendFile('index.html' , { root : __dirname});
-});
+		const spawn = require("child_process").spawn;
+		const pythonProcess = spawn('python2', ['cloudLamp.py', mode]);
+		
+		
+		res.sendFile('index.html' , { root : __dirname});
+	});
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

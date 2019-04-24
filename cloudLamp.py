@@ -1,13 +1,15 @@
 # Import modules
-# import time
+import time
 # import RPi.GPIO as GPIO
-import urllib2
+#import urllib2
 import json
 import serial
 import sys
 
 jsCondition = str(sys.argv[1])
 print(jsCondition)
+sys.stdout.flush()
+
 
 def getWeather():
 	"""
@@ -31,6 +33,7 @@ def getWeather():
 
 ser = serial.Serial('/dev/ttyACM0')  # open serial port
 print(ser.name)         # check which port was really used
-ser.write('1')     # write a string
+ser.write(jsCondition)     # write a string
 ser.close()             # close port
+
 
