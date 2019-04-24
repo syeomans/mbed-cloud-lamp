@@ -60,7 +60,7 @@ void rain(float r, float g, float b, float stepSize, float duration) {
             red = r;
             green = g;
             blue = b;
-            wait(0.4);
+            wait(0.5);
         }
         step += stepSize;
     } 
@@ -93,60 +93,53 @@ void thunderstorm(float r, float g, float b, float stepSize, float duration) {
 } 
 
 void sunset(){
-    fade(1.0, 0.2, 0.0, 0.001, 0.00); //fade to sunset
+    fade(1.0, 0.2, 0.0, 0.001, 0.005); //fade to sunset
     while(!pi.readable()){
     }
 }
 
 void night(){
-    fade(0.1, 0.0, 0.25, 0.001, 0.00); //fade to night
+    fade(0.1, 0.0, 0.25, 0.001, 0.005); //fade to night
     while(!pi.readable()){
     }
 }
 
 void sunny(){
-    fade(1.0, 0.3, 0.0, 0.001, 0.00); //fade to sunny
+    fade(1.0, 0.45, 0.0, 0.001, 0.005); //fade to sunny
     while(!pi.readable()){
     }
 }
 
 void winter(){
-    fade(1.0, 1.0, 0.3, 0.001, 0.00); //fade to winter
+    fade(1.0, 1.0, 0.3, 0.001, 0.005); //fade to winter
     while(!pi.readable()){
     }
 }
 
 void rain() {
+    fade(0.1, 0.0, 0.35, 0.001, 0.005);
     while(!pi.readable()) {
-        rain(0.1, 0.0, 0.35, 0.1, 4.0); //blink blue for rain
+        rain(0.1, 0.0, 0.35, 0.1, 1.0); //blink blue for rain
     }
     
 }
 
 void thunderstorm() {
+    fade(0.1, 0.0, 0.35, 0.001, 0.005);
     while(!pi.readable()) {
-        thunderstorm(0.1, 0.0, 0.35, 0.1, 8.0); //blink blue and flash white for thunder
+        thunderstorm(0.1, 0.0, 0.35, 0.1, 1.0); //blink blue and flash white for thunder
     }
 }
  void cloudy() {
     while(!pi.readable()) {
         fade(0.5, 0.5, 0.15, 0.001, 0.01); //fade to cloudy (half values of winter)
-        wait(2.5);
         fade(0.35, 0.35, 0.1, 0.001, 0.01); //fade to slightly cloudy
-        wait(2.5);
         fade(0.25, 0.25, 0.075, 0.001, 0.01); //fade to slightly cloudy
-        wait(2.5);
-        fade(0.1, 0.1, 0.03, 0.001, 0.01); //fade to slightly cloudy
-        wait(2.5);
-        fade(0.01, 0.008, 0.001, 0.001, 0.01); //fade to nearly cloudless
-        wait(2.5);
     }    
 }
 
 void off() {
-    red = 0.0;
-    green = 0.0;
-    blue = 0.0;
+    fade(0.0, 0.0, 0.0, 0.001, 0.005);
     while(!pi.readable()) {
     }
 }
@@ -169,9 +162,7 @@ void custom() {
     char redChar = pi.getc();
     char greenChar = pi.getc();
     char blueChar = pi.getc();
-    red = charConvert(redChar);
-    blue = charConvert(blueChar);
-    green = charConvert(greenChar);
+    fade(charConvert(redChar), charConvert(blueChar), charConvert(greenChar), 0.001, 0.005);
     while(!pi.readable()) {
     }
 }
