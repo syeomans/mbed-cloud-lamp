@@ -6,14 +6,6 @@ Members: Collin Moore, Samuel Yeomans, Sidharth Eleswarapu, Koh Hui Fang
 ### Purpose 
 Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display an animation corresponding to the current weather on an LED strip.
 
-### Parts list: 
-- [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
-- [MBED LPC 1768](https://os.mbed.com/platforms/mbed-LPC1768/)
-- [Analog LED strip](https://www.adafruit.com/product/285?length=1)
-- [12 Volt Power Supply](https://www.adafruit.com/product/798)
-- Gallon water jug
-- Bag of craft stuffing
-
 ### Getting Weather Data
 To collect the weather data, this Python script hits the free weather API _. This script condenses the more granular weather conditions into general archetypes and sends the corresponding character to the MBED through the virtual COM USB serial port. Currently, the script has Atlanta set as the location. More information regarding the weather API, including a list of conditions and locations, can be found here _.
 
@@ -33,4 +25,28 @@ This LED strip, along with the Pi and the MBED, are placed inside the water jug.
 
 # The Case
 
+The team built the cloud-shaped casing by following Household Hacker's [How To Make A Cloud Light](https://www.youtube.com/watch?v=07m0e7NwzKc) with a few modifications to make a door out of the bottom of the bottle. 
+
+### Parts list
+- Gallon water jug
+- Bag of craft stuffing
+- Small, flat door hinges (x2)
+- Small hook latch
+- Bolts, nuts, and washers that fit with your hinges and latch
+
+### Build steps
+1. Cut out a large rectangle from the base of the jug
+2. Attach hinge and latch
+3. Hot glue stuffing to the outside of the bottle
+
 # The Build
+
+### Parts list
+- [Raspberry Pi 3 Model B](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- [MBED LPC 1768](https://os.mbed.com/platforms/mbed-LPC1768/)
+- [Analog LED strip](https://www.adafruit.com/product/285?length=1)
+- [12 Volt Power Supply](https://www.adafruit.com/product/798)
+
+### Build steps
+
+1. Blah
