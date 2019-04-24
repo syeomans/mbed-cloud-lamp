@@ -1,10 +1,10 @@
-# The team: 
+# The Team
 ### Team Cloud Lamp
 Members: Collin Moore, Samuel Yeomans, Sidharth Eleswarapu, Koh Hui Fang
 
-# The project
+# The Project
 ### Purpose 
-Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display the animation corresponding to the current weather on an LED strip
+Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display an animation corresponding to the current weather on an LED strip.
 
 ### Parts list: 
 - Raspberry Pi 3 Model B https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
@@ -14,7 +14,7 @@ Use a Raspberry Pi to periodically collect data from a free weather API online, 
 - Gallon water jug
 - Bag of craft stuffing
 
-# Getting Weather Data
+### Getting Weather Data
 To collect the weather data, this Python script hits the free weather API _. This script condenses the more granular weather conditions into general archetypes and sends the corresponding character to the MBED through the virtual COM USB serial port. Currently, the script has Atlanta set as the location. More information regarding the weather API, including a list of conditions and locations, can be found here _.
 
 # Configuring settings via HTML
