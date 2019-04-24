@@ -5,12 +5,12 @@ Team Members:
 Use a Raspberry Pi to periodically collect data from a free weather API online, then send the information to the MBED to display the animation corresponding to the current weather on an LED strip
 
 # Parts list: 
-- 1x Raspberry Pi 3 Model B https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
-- 1x MBED LPC 1768 https://os.mbed.com/platforms/mbed-LPC1768/
-- 1x Gallon water jug
-- 1x Analog LED strip https://www.adafruit.com/product/285?length=1
-- 1x Bag of Cotton
-- 1x 12 Volt Power Supply https://www.adafruit.com/product/798
+- Raspberry Pi 3 Model B https://www.raspberrypi.org/products/raspberry-pi-3-model-b/
+- MBED LPC 1768 https://os.mbed.com/platforms/mbed-LPC1768/
+- Analog LED strip https://www.adafruit.com/product/285?length=1
+- 12 Volt Power Supply https://www.adafruit.com/product/798
+- Gallon water jug
+- Bag of craft stuffing
 
 # Getting Weather Data
 To collect the weather data, this Python script hits the free weather API _. This script condenses the more granular weather conditions into general archetypes and sends the corresponding character to the MBED through the virtual COM USB serial port. Currently, the script has Atlanta set as the location. More information regarding the weather API, including a list of conditions and locations, can be found here _.
