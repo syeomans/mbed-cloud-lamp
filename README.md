@@ -27,7 +27,9 @@ To display the animations, we use a analog LED strip connected to a 12V power ad
 
 ![Wiring for the analog LED strip](https://i.groupme.com/1224x1632.jpeg.54044aa65b5b4004841e978d1b89a970.large)
 
-This LED strip, along with the Pi and the MBED, are placed inside the water jug. We cut a door in the bottom of the jug to more easily access the innards. After the completion of the technical side of the project, we glued clumps of cotton all over it so that the jug resembled a cloud. 
+This LED strip, along with the Pi and the MBED, are placed inside the water jug. We cut a door in the bottom of the jug to more easily access the innards. After the completion of the technical side of the project, we glued clumps of cotton all over it so that the jug resembled a cloud. Below is a block diagram detailing the operation of the code
+
+![Block diagram](https://github.com/syeomans/mbed-cloud-lamp/blob/master/blockDiagram.png?raw=true)
 
 # The Case
 
