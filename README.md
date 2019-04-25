@@ -25,11 +25,11 @@ When the submit button is pressed on the website, the Python script runs as a ch
 ### Displaying the animations via the MBED
 To display the animations, we use a analog LED strip connected to a 12V power adapter. The circuit below uses MOSFETS to control the red, green, and blue signals using PWM. For more information about using this LED strip, see [here](https://learn.adafruit.com/rgb-led-strips/overview).
 
+![Circuit diagram](https://github.com/syeomans/mbed-cloud-lamp/blob/master/Circuit%20Diagram.png)
+
 ![Wiring for the analog LED strip](https://i.groupme.com/1224x1632.jpeg.54044aa65b5b4004841e978d1b89a970.large)
 
 This LED strip, along with the Pi and the MBED, are placed inside the water jug. We cut a door in the bottom of the jug to more easily access the innards. After the completion of the technical side of the project, we glued clumps of cotton all over it so that the jug resembled a cloud. Below is a block diagram detailing the operation of the code
-
-![Circuit diagram](https://github.com/syeomans/mbed-cloud-lamp/blob/master/Circuit%20Diagram.png)
 
 ![Block diagram](https://github.com/syeomans/mbed-cloud-lamp/blob/master/blockDiagram.png?raw=true)
 
