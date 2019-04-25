@@ -52,7 +52,7 @@ The team built the cloud-shaped casing by following Household Hacker's [How To M
 - [MBED LPC 1768](https://os.mbed.com/platforms/mbed-LPC1768/)
 - [Analog LED strip](https://www.adafruit.com/product/285?length=1)
 - [12 Volt Power Supply](https://www.adafruit.com/product/798)
-- [Extension Cord]
+- Extension Cord
 
 ### Build steps
 
